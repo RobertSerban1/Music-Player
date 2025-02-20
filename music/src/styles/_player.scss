@@ -1,0 +1,117 @@
+.player {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Controlul timpului (bara de progres + timpii) */
+.time-control {
+  width: 50%;
+  display: flex;
+  align-items: center; /* Centrează bara vertical */
+  justify-content: space-between;
+  position: relative;
+}
+
+.time-control p {
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+/* Bara de progres (fundal gri) */
+.track {
+  background: #ccc; /* Fundal gri */
+  width: 100%;
+  height: 1rem; /* Bara mai subțire */
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Partea colorată în albastru care indică progresul */
+.animate-track {
+  background: lightblue; /* Culoarea progresului */
+  width: 0%; /* Se va modifica dinamic */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out; /* Animație smooth */
+  z-index: 1;
+}
+
+/* Slider-ul (input range) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0.4rem;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2; /* Să fie deasupra track-ului */
+  opacity: 0; /* Ascunde vizual slider-ul */
+}
+
+/* 🔹 Ascundere completă a thumb-ului slider-ului */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0; /* Ascunde thumb-ul */
+  height: 0;
+  background: transparent;
+  cursor: default;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  background: transparent;
+  cursor: default;
+}
+
+/* 🔹 Dacă vrei să fie vizibil doar când utilizatorul interacționează */
+input[type="range"]:hover::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  background: lightblue;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 1; /* Devine vizibil doar la hover */
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: lightblue;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Controalele de redare */
+.play-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 30%;
+}
+
+.play-control svg {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+  .play-control {
+    width: 60%;
+  }
+}
