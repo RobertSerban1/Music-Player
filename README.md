@@ -4,6 +4,6 @@ The Music Player is a modern web-based audio player built using React, JavaScrip
 
 ## 🔥 Preview
 
-![Music Player Screenshot 1](screenshots/1.png)
+![Music Player Screenshot 1](screenshots/2.png)
 
-![Music Player Screenshot 2](screenshots/2.png)
+![Music Player Screenshot 2](screenshots/1.png)
